@@ -3,19 +3,77 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  font-family: var(--font-inter), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
+  body {
+    font-family: var(--font-inter), sans-serif !important;
+    /* Force this style */
+  }
+
+  h1,
+  .text-h1 {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    line-height: clamp(3.5rem, 8vw, 5.4rem);
+    font-weight: 700;
+    letter-spacing: clamp(-2.5%, -0.5vw, -3%);
+  }
+
+  h2,
+  .text-h2 {
+    font-size: clamp(2.5rem, 6vw, 3rem);
+    line-height: clamp(3rem, 6vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: clamp(-1.8%, -0.25vw, -2%);
+  }
+
+  h3,
+  .text-h3 {
+    font-size: clamp(1.6rem, 5vw, 2rem);
+    line-height: clamp(2.1rem, 5vw, 2.4rem);
+    font-weight: 400;
+    letter-spacing: clamp(0%, -0.2vw, 0%);
+  }
+
+  h4,
+  .text-h4 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    line-height: clamp(1.5rem, 4vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: clamp(-1.6%, -0.15vw, -2%);
+  }
+
+  h5,
+  .text-h5 {
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    line-height: clamp(1.2rem, 3.5vw, 1.5rem);
+    font-weight: 400;
+    letter-spacing: clamp(0%, -0.1vw, 0%);
+  }
+
+  p,
+  .text-main {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    line-height: clamp(1.2rem, 2.5vw, 1.4rem);
+    font-weight: 400;
+    letter-spacing: clamp(0px, 0.1vw, 0.1px);
+  }
+
+  .text-strong {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    line-height: clamp(1.2rem, 2.5vw, 1.4rem);
+    font-weight: 600;
+    letter-spacing: clamp(0px, 0.1vw, 0.1px);
+  }
+
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }
