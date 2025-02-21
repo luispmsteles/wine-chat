@@ -5,41 +5,37 @@ const navbar = {
         link: "/",
     },
     links: {
-        inicio: {
-            title: "Inicio",
-            link: "/"
-        },
         servicos: {
             title: "Serviços",
-            link: "/servicos"
+            link: "/"
         },
         comunidade: {
             title: "Comunidade",
-            link: "/comunidade"
+            link: "/"
         },
         recursos: {
             title: "Recursos",
-            link: "/recursos"
+            link: "/"
         },
         precos: {
             title: "Preços",
-            link: "/precos"
+            link: "/"
         },
         contacto: {
             title: "Contacto",
-            link: "/contacto"
+            link: "/"
         },
     },
     buttons: {
         signin: {
             title: "Sign in",
             color: "light",
-            link: "/signin"
+            link: "/dashboard"
         },
         register: {
             title: "Registar",
             color: "dark",
-            link: "/signup"
+            link: "/dashboard"
         },
     }
 }

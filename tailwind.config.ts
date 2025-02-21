@@ -26,6 +26,9 @@ export default {
           quaternary: "#757575"
         },
       },
+      screens: {
+        xs: "340px"
+      },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
       },

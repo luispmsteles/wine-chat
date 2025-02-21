@@ -2,6 +2,7 @@
 import { useEffect, useReducer, useRef } from "react";
 import MessageList from "./MessageList";
 import MessageInput from "./MessageInput";
+import { v4 as uuidv4 } from "uuid";
 
 interface Message {
   id: string;
@@ -30,12 +31,6 @@ export default function Chat({ initialPrompt }: { initialPrompt?: string }) {
   const chatEndRef = useRef<HTMLDivElement | null>(null);
   const initialPromptSent = useRef(false); // Prevents duplicate prompt sending
 
-  // Scroll to bottom when messages update
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [state.messages]);
-
-  // Send the initial prompt only once
   useEffect(() => {
     if (initialPrompt && !initialPromptSent.current) {
       initialPromptSent.current = true; // Mark as sent
@@ -71,7 +66,7 @@ export default function Chat({ initialPrompt }: { initialPrompt?: string }) {
       console.error("Error:", error);
       dispatch({
         type: "ADD_MESSAGE",
-        payload: { id: crypto.randomUUID(), role: "assistant", content: "Error generating response." },
+        payload: { id: uuidv4(), role: "assistant", content: "Error generating response." },
       });
     } finally {
       dispatch({ type: "SET_GENERATING", payload: false });

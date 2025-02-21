@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Button from "./Button";
 import { Menu, X } from "lucide-react"; // Icons for the sidebar toggle
-import navbar from "@/data/navbar";
+import navbar from "@/static-content/navbar";
 
 
 const Navbar = () => {
@@ -39,8 +39,8 @@ const Navbar = () => {
                     <Link href={navbar.logo.link} className="flex items-center">
                         <Image
                             src={navbar.logo.src}
-                            height={35}
-                            width={40}
+                            height={23.33}
+                            width={35}
                             alt={navbar.logo.alt}
                         />
                     </Link>
@@ -59,8 +59,6 @@ const Navbar = () => {
                         {Object.entries(navbar.buttons).map(([key, btn]) => (
                             <Button key={key} text={btn.title} color={btn.color} link={btn.link} />
                         ))}
-                        {/* <Button text={navbar.buttons..contacts.title} color="light" link="/contact" />
-                        <Button text={navbar.links.contacts.title} color="dark" link="/contact" /> */}
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -88,32 +86,21 @@ const Navbar = () => {
 
                 {/* Sidebar Links */}
                 <div className="flex flex-col items-start gap-6 pt-[5rem] px-6">
-                    {/* <Link
-                        href="/about"
-                        className="text-white text-lg hover:text-gray-300"
-                        onClick={() => setIsSidebarOpen(false)}
-                    >
-                        {navbar.links.about.title}
-                    </Link>
-                    <Link
-                        href="/services"
-                        className="text-white text-lg hover:text-gray-300"
-                        onClick={() => setIsSidebarOpen(false)}
-                    >
-                        {navbar.links.services.title}
-                    </Link>
-                    <Link
-                        href="/works"
-                        className="text-white text-lg hover:text-gray-300"
-                        onClick={() => setIsSidebarOpen(false)}
-                    >
-                        {navbar.links.works.title}
-                    </Link>
-                    <div className="w-full flex-center py-8 border-t border-dark-secondary">
-                        <Button text={navbar.links.contacts.title} color="brand" link="/contact" />
-                    </div> */}
-
-
+                    {Object.entries(navbar.links).map(([key, link]) => (
+                        <Link
+                            key={key}
+                            href={`/${link.link}`}
+                            className="text-white text-lg hover:text-neutral"
+                            onClick={() => setIsSidebarOpen(false)}
+                        >
+                            {link.title}
+                        </Link>
+                    ))}
+                    <div className="w-full flex justify-between py-8 border-t border-dark-secondary">
+                    {Object.entries(navbar.buttons).map(([key, btn]) => (
+                        <Button key={key} text={btn.title} color={btn.color} link={btn.link} onClick={() => setIsSidebarOpen(false)} />
+                    ))}
+                    </div>
                 </div>
             </div>
 

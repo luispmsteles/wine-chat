@@ -43,13 +43,21 @@
     font-weight: 600;
     letter-spacing: clamp(-1.6%, -0.15vw, -2%);
   }
-
+  
   h5,
   .text-h5 {
     font-size: clamp(1rem, 3.5vw, 1.25rem);
     line-height: clamp(1.2rem, 3.5vw, 1.5rem);
     font-weight: 400;
     letter-spacing: clamp(0%, -0.1vw, 0%);
+  }
+  
+  h6,
+  .text-h6 {
+    font-size: clamp(0.8rem, 3.5vw, 1.25rem);
+    line-height: clamp(1.3rem, 4vw, 1.5rem);
+    font-weight: 600;
+    letter-spacing: clamp(-1.5%, -0.15vw, -1.8%);
   }
 
   p,

@@ -6,17 +6,22 @@ const Button = ({
     text,
     link,
     color,
+    onClick
 }: {
     text: string;
     link: string;
     color: string;
+    onClick?: () => void;
 }) => {
-    const btnStyling = color === 'dark' ? 'bg-dark text-light border border-dark-secondary hover:bg-light hover:border-light-secondary hover:text-dark' : `bg-neutral-secondary text-dark border border-neutral hover:bg-dark hover:border-dark-secondary hover:text-light`;
-    
+    const btnStyling = color === 'dark'
+        ? 'bg-dark text-light border border-dark-secondary hover:bg-light hover:border-light-secondary hover:text-dark'
+        : `bg-neutral-secondary text-dark border border-neutral hover:bg-dark hover:border-dark-secondary hover:text-light`;
+
     return (
         <ShadcnButton
             asChild
             className={`${btnStyling} shadow-none rounded-md p-2 !text-main`}
+            onClick={onClick}
         >
             <Link href={link}>{text}</Link>
         </ShadcnButton>

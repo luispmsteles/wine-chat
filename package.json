@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@ai-sdk/react": "^1.1.17",
+    "@auth/prisma-adapter": "^2.7.4",
+    "@prisma/client": "^6.4.0",
+    "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "ai": "^4.1.43",
     "class-variance-authority": "^0.7.1",
@@ -17,6 +20,7 @@
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.475.0",
     "next": "15.1.7",
+    "next-auth": "^5.0.0-beta.25",
     "next-themes": "^0.4.4",
     "ollama": "^0.5.13",
     "react": "^19.0.0",
@@ -28,7 +32,8 @@
     "sonner": "^2.0.0",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-fluid-type": "^2.0.7"
+    "tailwindcss-fluid-type": "^2.0.7",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -38,6 +43,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "postcss": "^8",
+    "prisma": "^6.4.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
