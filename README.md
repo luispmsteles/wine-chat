@@ -1,6 +1,6 @@
 ## Getting Started
 
-First, run the development server:
+To get started follow the instructions bellow to setup this project
 
 1) Install the dependencies:
 
